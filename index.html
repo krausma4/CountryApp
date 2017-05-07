@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta charset="UTF-8" />
+
+    <title>Plain JS Validation App</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="lib/browserShims.js"></script>
+    <script src="lib/util.js"></script>
+    <script src="lib/errorTypes.js"></script>
+    <script src="lib/Enumeration.js"></script>
+    <script src="src/c/initialize.js"></script>
+    <script src="src/m/Country.js"></script>
+</head>
+<body>
+<header>
+    <div class="wrapper clearfix">
+
+        <nav>
+            <ul>
+                <li><a href="createCountry.html">C</a></li>
+                <li><a href="retrieveAndListAllCountrys.html">R</a></li>
+                <li><a href="updateCountry.html">U</a></li>
+                <li><a href="deleteCountry.html">D</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="wrapper clearfix">
+
+
+
+                <p>Clear the database: <button type="button" onclick="Country.clearData()">Clear now</button> </p>
+               <p>Generate test data:  <button type="button" onclick="Country.generateTestData()">generate now</button> </p>
+
+        </div>
+
+</main>
+
+</body>
+</html>
