@@ -1,3 +1,8 @@
+/**
+ * Created by Ole on 07.05.2017.
+ */
+"use strict";
+
 function City(slots) {
     // assign default values
     this.name = ""; // string
@@ -83,7 +88,7 @@ City.add = function(slots) {
     }
 };
 
-City.retrieveAll = function() {
+City.loadAll = function() {
     var key ="", keys=[], i=0, citiesString="", cities={};
 
     try {
