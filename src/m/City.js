@@ -1,3 +1,8 @@
+/**
+ * Created by Ole on 07.05.2017.
+ */
+"use strict";
+
 function City(slots) {
     // assign default values
     this.name = ""; // string
