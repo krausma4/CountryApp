@@ -11,10 +11,13 @@
 function Country(slots){
   
   this.name = "";
+  this.capital = null;
+  this.cities = {};
   
   if(arguments.length>0) {
     
     this.setName (slots.name);
+    this.setCapital(slots.capital);
     
   }
   
@@ -104,6 +107,33 @@ Country.prototype.setName = function (t) {
     
   }
   
+};
+Country.checkCapital = function (capital) {
+  
+  var constraintviolation;
+  
+  if(!capital){
+    constraintviolation = new MandatoryValueConstraintViolation("a country must have a capital");
+  }else {
+    constraintviolation = City.checkNameAsIdRef(capital);
+  }
+  
+  return constraintviolation;
+  
+};
+
+Country.prototype.setCapital = function (capital) {
+
+  var validationResult = Country.checkCapital(capital);
+  
+  if(validationResult instanceof  NoConstraintViolation){
+    this.capital = capital;
+  }else{
+    throw validationResult;
+  }
+
+
+
 };
 
 
@@ -344,13 +374,16 @@ Country.generateTestData = function () {
 try{
   
   Country.instances["Deutschland"] = new Country({
-    name: "Deutschland"
+    name: "Deutschland",
+    capital: "Berlin"
   });
  Country.instances["Polen"] = new Country({
-    name: "Polen"
+    name: "Polen",
+   capital: "Warschau"
   });
   Country.instances["Russland"] = new Country({
-    name: "Russland"
+    name: "Russland",
+    capital: "Moskau"
   });
   
  Country.saveAll();
