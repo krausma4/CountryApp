@@ -116,7 +116,7 @@ pl.v.cities.delete = {
         if (name) {
             City.destroy(name);
             // remove deleted city from select options
-            formEl.selectEl.remove(formEl.selectEl.selectedIndex);
+            selectEl.remove(selectEl.selectedIndex);
             formEl.reset();
         }
     }

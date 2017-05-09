@@ -18,8 +18,10 @@
     <script src="lib/errorTypes.js"></script>
     <script src="lib/Enumeration.js"></script>
     <script src="src/c/app.js"></script>
+    <script src="src/c/InternationalOrganizations.js"></script>
     <script src="src/c/cities.js"></script>
     <script src="src/c/countries.js"></script>
+    <script src="src/m/InternationalOrganizations.js"></script>
     <script src="src/m/City.js"></script>
     <script src="src/m/Country.js"></script>
     <script src="src/v/countries.js"></script>
@@ -101,7 +103,12 @@
         <h1>Update Country</h1>
         <form>
             <div>
-                <label>Name: <input type="text" name="name" /></label>
+                <label>Select country:
+                    <select name="selectCountry"></select>
+                </label>
+            </div>
+            <div>
+                <label>Name: <output type="text" name="name" /></label>
             </div>
             <div>
                 <label>Capital: <select name="selectCapital"></select></label>

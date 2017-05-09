@@ -25,7 +25,7 @@ City.checkName = function(id) {
             "The name must be a non-empty string!");
     }
     else {
-        return new NoConstraintViolation();
+        return new NoConstraintViolation("");
     }
 };
 City.checkNameAsId = function(id) {

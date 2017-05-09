@@ -123,7 +123,9 @@ pl.v.countries.update = {
         var formEl = document.querySelector("section#countryUpdate > form"),
             saveButton = formEl.commit,
             selectCountryEl = formEl.selectCountry;
-        this.fillSelect(selectCountryEl);
+        // set up the country selection list
+        util.fillSelectWithOptions(selectCountryEl, Country.instances,
+            "name", {displayProp:"name"});
 
         // when a country is selected, populate the form with its data
         selectCountryEl.addEventListener("input", function () {
