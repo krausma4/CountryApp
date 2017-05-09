@@ -18,11 +18,11 @@
     <script src="lib/errorTypes.js"></script>
     <script src="lib/Enumeration.js"></script>
     <script src="src/m/City.js"></script>
-    <script src="src/c/general.js"></script>
+    <script src="src/c/app.js"></script>
     <script src="src/c/cities.js"></script>
     <script src="src/v/cities.js"></script>
     <script>
-        window.addEventListener("load", pl.c.cities.menu.initialize);
+        window.addEventListener("load", pl.c.cities.manage.initialize);
     </script>
 </head>
 <body>
@@ -62,7 +62,7 @@
         <tbody></tbody>
     </table>
     <div>
-        <a onclick="pl.v.cities.menu.refreshUI()">
+        <a onclick="pl.v.cities.manage.refreshUI()">
             Back to City Menu</a>
     </div>
 </section>
@@ -75,7 +75,7 @@
         </div>
         <div>
             <button type="submit" name="commit">Save</button>
-            <button type="button" onclick="pl.v.cities.menu.refreshUI()">
+            <button type="button" onclick="pl.v.cities.manage.refreshUI()">
                 Back to City Menu</button>
         </div>
     </form>
@@ -91,7 +91,7 @@
         </div>
         <div>
             <button type="submit" name="commit">Delete</button>
-            <button type="button" onclick="pl.v.cities.menu.refreshUI()">
+            <button type="button" onclick="pl.v.cities.manage.refreshUI()">
                 Back to City Menu</button>
         </div>
     </form>

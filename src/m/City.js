@@ -88,7 +88,7 @@ City.add = function(slots) {
     }
 };
 
-City.loadAll = function() {
+City.retrieveAll = function() {
     var key ="", keys=[], i=0, citiesString="", cities={};
 
     try {

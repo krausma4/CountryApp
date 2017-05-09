@@ -12,10 +12,10 @@
  * Country menu
  **/
 
-pl.v.countries.menu = {
+pl.v.countries.manage = {
     setupUserInterface: function () {
-        window.addEventListener("beforeunload", pl.v.countries.menu.exit);
-        pl.v.countries.menu.refreshUI();
+        window.addEventListener("beforeunload", pl.v.countries.manage.exit);
+        pl.v.countries.manage.refreshUI();
     },
     exit: function () {
         Country.saveAll();

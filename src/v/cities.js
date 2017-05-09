@@ -7,10 +7,10 @@
  * City menu
  **/
 
-pl.v.cities.menu = {
+pl.v.cities.manage = {
     setupUserInterface: function () {
-        window.addEventListener("beforeunload", pl.v.cities.menu.exit);
-        pl.v.cities.menu.refreshUI();
+        window.addEventListener("beforeunload", pl.v.cities.manage.exit);
+        pl.v.cities.manage.refreshUI();
     },
     exit: function () {
         City.saveAll();
