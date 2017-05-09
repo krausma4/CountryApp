@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/base-min.css" />
+    <link rel="stylesheet" href="css/main.css"/>
+    <script src="lib/browserShims.js"></script>
+    <script src="lib/util.js"></script>
+    <script src="lib/errorTypes.js"></script>
+    <script src="lib/Enumeration.js"></script>
+    <script src="src/m/City.js"></script>
+    <script src="src/m/Country.js"></script>
+    <script src="src/m/InternationalOrganizations.js"></script>
+    <script src="src/c/app.js"></script>
+    <script src="src/v/InternationalOrganizations.js"></script>
+    <script src="src/c/InternationalOrganizations.js"></script>
+    <script>
+      window.addEventListener("load", pl.c.internationalOrganizations.manage.initialize);
+    </script>
+</head>
+<body>
+<!-- ======================================================= -->
+<section id="Organization-M" class="UI-Page">
+    <!-- ======================================================= -->
+    <h1>Public Library: Manage organizations</h1>
+    <menu>
+        <li><button type="button" onclick="pl.v.internationalOrganizations.list.setupUserInterface()">List all Organizations</button></li>
+        <li><button type="button" onclick="pl.v.internationalOrganizations.create.setupUserInterface()">Add a new Organizations</button></li>
+        <li><button type="button" onclick="pl.v.internationalOrganizations.update.setupUserInterface()">Update a Organization record</button></li>
+        <li><button type="button" onclick="pl.v.internationalOrganizations.destroy.setupUserInterface()">Delete a Organization record</button></li>
+    </menu>
+    <div class="button"><a href="index.html">Back to Main menu</a></div>
+</section>
+<!-- ======================================================= -->
+<section id="Organization-R" class="UI-Page">
+    <!-- ======================================================= -->
+    <h1>Public Library: List all Organizations</h1>
+    <table>
+        <thead><tr><th>Name</th><th>Acronym</th><th>Member</th></tr></thead>
+        <tbody></tbody>
+    </table>
+    <div class="button">
+        <button type="button" onclick="pl.v.internationalOrganizations.manage.refreshUI()">Back to menu</button>
+    </div>
+</section>
+<!-- ======================================================= -->
+<section id="Organization-C" class="UI-Page">
+    <!-- ======================================================= -->
+    <h1>Public Library: Create a new Organization record</h1>
+    <form>
+        <div class="field">
+            <label>Name: <input type="text" name="name" /></label>
+        </div>
+        <div class="field">
+            <label>Acronym: <input type="text" name="acronym" /></label>
+        </div>
+
+        <div class="select-many">
+            <label>Members:
+                <select name="selectMembers" multiple="multiple"></select>
+            </label>
+        </div>
+        <div class="button-group">
+            <button type="submit" name="commit">Save</button>
+            <button type="button" onclick="pl.v.internationalOrganizations.manage.refreshUI()">Back to menu</button>
+        </div>
+    </form>
+</section>
+<!-- ======================================================= -->
+<section id="Organization-U" class="UI-Page">
+    <!-- ======================================================= -->
+    <h1>Public Library: Update an Organization record</h1>
+    <form>
+        <div class="select-one">
+            <label>Select Organization: <select name="selectOrganization"></select></label>
+        </div>
+        <div class="field">
+            <label>Name: <input name="name"></input></label>
+        </div>
+        <div class="field">
+            <label>Acronym: <output type="text" name="acronym" /></label>
+        </div>
+
+        <div class="widget">
+            <label for="updOrganizationSelectMembers">Members: </label>
+            <div class="MultiSelectionWidget" id="updOrganizationSelectMembers"></div>
+        </div>
+        <div class="button-group">
+            <button type="submit" name="commit">Save</button>
+            <button type="button" onclick="pl.v.internationalOrganizations.manage.refreshUI()">Back to menu</button>
+        </div>
+    </form>
+</section>
+<!-- ======================================================= -->
+<section id="Organization-D" class="UI-Page">
+    <!-- ======================================================= -->
+    <h1>Public Library: Delete an Organization record</h1>
+    <form id="deleteOrganizationForm" class="pure-form pure-form-aligned">
+        <div class="select-one">
+            <label>Select Organization: <select name="selectOrganization"></select></label>
+        </div>
+        <div class="button-group">
+            <button type="submit" name="delete">Delete</button>
+            <button type="button" onclick="pl.v.internationalOrganizations.manage.refreshUI()">Back to menu</button>
+        </div>
+    </form>
+</section>
+</body>
+</html>

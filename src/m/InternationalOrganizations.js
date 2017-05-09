@@ -46,7 +46,7 @@ InternationalOrganizations.checkName = function (name) {
   
   else {
     
-    constraintViolation = new NoConstraintViolation();
+    constraintViolation = new NoConstraintViolation("alles gut");
     
   }
   
@@ -101,7 +101,7 @@ InternationalOrganizations.checkAcronymAsId = function (acronym) {
   
   if (constraintViolation instanceof NoConstraintViolation) {
     
-    if (!acronym) {
+    if (acronym  ) {
       
       constraintViolation = new MandatoryValueConstraintViolation
       
@@ -118,7 +118,7 @@ InternationalOrganizations.checkAcronymAsId = function (acronym) {
     
     else {
       
-      constraintViolation = new NoConstraintViolation();
+      constraintViolation = new NoConstraintViolation("gut");
       
     }
     
@@ -211,7 +211,7 @@ InternationalOrganizations.prototype.addMember = function (member) {
       constraintViolation instanceof NoConstraintViolation) {
     // add the new author reference
     cityIdRefStr = cityIdRef;
-    this.authors[cityIdRefStr] =
+    this.members[cityIdRefStr] =
         City.instances[cityIdRefStr];
   } else {
     throw constraintViolation;
@@ -247,6 +247,7 @@ InternationalOrganizations.convertRow2Obj = function (OrganizationRow) {
 
 
 InternationalOrganizations.destroy = function (acronym) {
+  console.log(" lösche jetzt organisation mit acronym: "+ acronym);
   if (InternationalOrganizations.instances[acronym]) {
     
     delete InternationalOrganizations.instances[acronym];
@@ -263,10 +264,11 @@ InternationalOrganizations.retrieveAll = function () {
   var key = "", keys = [], organizationString = "", organizations = {}, i = 0;
   
   try {
-    if (localStorage.getItem( "internationalOrganizationz" )) {
-      
-      organizationString = localStorage.getItem( "internationalOrganizationz" );
+    if (localStorage.getItem( "internationalOrganizations" )) {
+     
+      organizationString = localStorage.getItem( "internationalOrganizations" );
     }
+   
   }
   catch (e) {
     alert( "Error when reading from Local Storage\n" + e );
@@ -297,8 +299,8 @@ InternationalOrganizations.saveAll = function () {
       Object.keys( InternationalOrganizations.instances ).length;
   try {
     organizationString = JSON.stringify( InternationalOrganizations.instances );
-    localStorage.setItem( "countrys", organizationString );
-    
+    localStorage.setItem( "internationalOrganizations", organizationString );
+    console.log(" internationalOrganizations gibt es als item: "+ localStorage.getItem("internationalOrganizations"));
     
   } catch (e) {
     alert( "Error" );
@@ -323,12 +325,73 @@ InternationalOrganizations.add = function (slots) {
     organization = null;
   }
   
-  var validationResult = Country.checkName( slots.name );
+  var validationResult = InternationalOrganizations.checkName( slots.name );
   if (validationResult instanceof NoConstraintViolation) {
     // add book to the Book.instances collection
-    InternationalOrganizations.instances[slots.name] = organization;
+    InternationalOrganizations.instances[slots.acronym] = organization;
     console.log( "Organization " + slots.name + " created!" );
   }
+  
+  
+};
+
+InternationalOrganizations.update = function (slots){
+  
+  
+  var organization = InternationalOrganizations.instances[slots.acronym],
+      noConstraintViolated =true,
+      updatedProperties= [],
+      objectBeforeUpdate = util.cloneObject(organization);
+  
+  try{
+    if(organization.name && organization.name !== slots.name){
+      organization.setName(slots.name);
+      updatedProperties.push("name");
+      
+    }
+    if(organization.acronym !== slots.acronym){
+    
+      organization.setAcronym(slots.acronym);
+      updatedProperties.push("acronym");
+    }
+    if(slots.members && (organization.members !== slots.members)){
+    
+      organization.setMember(slots.members);
+      updatedProperties.push("members");
+    }
+    
+    if ("membersIdRefToAdd" in slots) {
+      updatedProperties.push("members(added)");
+      var i;
+      for (i=0; i < slots.membersIdRefToAdd.length; i++) {
+        organization.addMember( slots.membersIdRefToAdd[i]);
+      }
+    }
+    if ("membersIdRefToRemove" in slots) {
+      updatedProperties.push("members(removed)");
+      var i;
+      for (i=0; i < slots.membersIdRefToRemove.length; i++) {
+        organization.removeMember( slots.membersIdRefToRemove[i]);
+      }
+      
+    }
+    console.log("Organization " + slots.acronym + " modified!");
+  }catch(e){
+    console.log( e.constructor.name +": "+ e.message);
+    noConstraintViolated = false;
+    // restore object to its state before updating
+    InternationalOrganizations.instances[slots.acronym] = objectBeforeUpdate;
+  }
+  
+  if (noConstraintViolated) {
+    if (updatedProperties.length > 0) {
+      console.log("Properties " + updatedProperties.toString() +
+          " modified for organization " + slots.acronym);
+    } else {
+      console.log("No property value changed for organization " + slots.acronym + " !");
+    }
+  }
+  
   
   
 };
