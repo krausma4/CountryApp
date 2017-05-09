@@ -138,6 +138,85 @@ Country.prototype.setCapital = function (capital) {
 
 
 
+Country.checkCity = function (city) {
+  
+    var constraintViolation = null;
+    if (!city) {
+      
+      constraintViolation = new NoConstraintViolation("alles gut");
+    } else {
+      // invoke foreign key constraint check
+      constraintViolation =
+          City.checkNameAsIdRef( city );
+    }
+    return constraintViolation;
+};
+
+
+Country.prototype.addCity =function (city) {
+  
+  var constraintViolation = null,
+      cityIdRef = 0, cityIdRefStr = "";
+  
+  if (typeof( city) !== "object") {  // an ID reference or
+    cityIdRef = city;
+  } else {                       // an object reference
+    cityIdRef = city.name;
+  }
+  constraintViolation = Country.checkCity( cityIdRef );
+  if (cityIdRef &&
+      constraintViolation instanceof NoConstraintViolation) {
+    // add the new author reference
+    cityIdRefStr = cityIdRef;
+    this.cities[cityIdRefStr] =
+        City.instances[cityIdRefStr];
+  } else {
+    throw constraintViolation;
+  }
+  
+  
+};
+
+Country.prototype.removeCity = function (city) {
+  
+  var constraintViolation = null;
+  var cityIdRef = "";
+  // an author can be given as ID reference or object reference
+  if (typeof(city) !== "object") {
+    cityIdRef = city;
+  }
+  else {
+    cityIdRef = city.name;
+  }
+  constraintViolation = Country.checkCity( cityIdRef );
+  if (constraintViolation instanceof NoConstraintViolation) {
+    // delete the author reference
+    delete this.cities[cityIdRef];
+  } else {
+    throw constraintViolation;
+  }
+
+};
+
+Country.prototype.setCities = function (city) {
+  var keys = [], i = 0;
+  this.cities = {};
+  if (Array.isArray( city )) {  // array of IdRefs
+    for (i = 0; i < city.length; i += 1) {
+      this.addCity( city[i] );
+    }
+  } else {  // map of object refs
+    keys = Object.keys( city );
+    for (i = 0; i < keys.length; i += 1) {
+      this.addCity( city[keys[i]] );
+    }
+  }
+  
+  
+};
+
+
+
 Country.convertRow2Obj = function (countryRow){
   
   return new Country(countryRow);
@@ -375,15 +454,18 @@ try{
   
   Country.instances["Deutschland"] = new Country({
     name: "Deutschland",
-    capital: "Berlin"
+    capital: "Berlin",
+    cities: {name: "Berlin"}
   });
  Country.instances["Polen"] = new Country({
     name: "Polen",
-   capital: "Warschau"
+   capital: "Warschau",
+   cities: {name: "Berlin"}
   });
   Country.instances["Russland"] = new Country({
     name: "Russland",
-    capital: "Moskau"
+    capital: "Moskau",
+    cities: {name: "Berlin"}
   });
   
  Country.saveAll();
