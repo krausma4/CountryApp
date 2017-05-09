@@ -80,13 +80,18 @@ pl.v.internationalOrganizations.create = {
       formEl.acronym.setCustomValidity(
           InternationalOrganizations.checkAcronymAsId( formEl.acronym.value).message);
     });
+    formEl.selectMembers.addEventListener("change",function () {
+      
+     // formEl.selectMembers.setCustomValidity(InternationalOrganizations.checkMember(formEl.selectMembers));
+      
+    });
     /* MISSING CODE: add event listeners for responsive validation
      on new user input with Book.checkTitle and Book.checkYear
      */
     
     
     // set up the authors selection list (or association list widget)
-    util.fillSelectWithOptions( membersSelectEl, InternationalOrganizations.instances, "name",
+    util.fillSelectWithOptions( membersSelectEl, Country.instances, "name",
         {displayProp:"name"});
     // set up the publisher selection list
    
@@ -119,7 +124,10 @@ pl.v.internationalOrganizations.create = {
     // save the input data only if all of the form fields are valid
     if (formEl.checkValidity()) {
       // construct the list of author ID references from the association list
+      console.log("anzahl ausgewählter länder: "+selectedMembersOptions.length);
       for (i=0; i < selectedMembersOptions.length; i++) {
+        
+        console.log("member hinzufügen: "+ selectedMembersOptions[i].value);
         slots.membersIdRef.push( selectedMembersOptions[i].value);
       }
       // alternative code using array.map
@@ -242,7 +250,7 @@ pl.v.internationalOrganizations.update = {
       formEl.acronym.value = organization.acronym;
       // set up the associated authors selection widget
       util.createMultiSelectionWidget( membersSelWidget, organization.members,
-          City.instances, "name", "name" );
+          Country.instances, "name", "name" );
       // assign associated publisher to index of select element
     
     }

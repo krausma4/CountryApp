@@ -13,8 +13,8 @@ function InternationalOrganizations(slots) {
     this.setName( slots.name );
     this.setAcronym( slots.acronym );
     
-    if (slots.members) {
-      this.setMember( slots.members );
+    if (slots.members ||slots.membersIdRef) {
+      this.setMember( slots.members || slots.membersIdRef );
     }
     
     
@@ -101,7 +101,7 @@ InternationalOrganizations.checkAcronymAsId = function (acronym) {
   
   if (constraintViolation instanceof NoConstraintViolation) {
     
-    if (acronym  ) {
+    if (!acronym  ) {
       
       constraintViolation = new MandatoryValueConstraintViolation
       
@@ -163,15 +163,15 @@ InternationalOrganizations.prototype.setAcronym = function (acronym) {
   
 };
 /***************Check Member**************************************/
-InternationalOrganizations.checkMember = function (cityIdRef) {
+InternationalOrganizations.checkMember = function (countryIdRef) {
   var constraintViolation = null;
-  if (!cityIdRef) {
+  if (!countryIdRef) {
     
-    constraintViolation = new NoConstraintViolation();
+    constraintViolation = new NoConstraintViolation("alles gut");
   } else {
     // invoke foreign key constraint check
     constraintViolation =
-        City.checkNameAsIdRef( cityIdRef );
+        Country.checkNameAsIdRef( countryIdRef );
   }
   return constraintViolation;
 };
@@ -199,20 +199,20 @@ InternationalOrganizations.prototype.setMember = function (members) {
 /***************Add Member**************************************/
 InternationalOrganizations.prototype.addMember = function (member) {
   var constraintViolation = null,
-      cityIdRef = 0, cityIdRefStr = "";
+      countryIdRef = 0, countryIdRefStr = "";
   
   if (typeof( member) !== "object") {  // an ID reference or
-    cityIdRef = member;
+    countryIdRef = member;
   } else {                       // an object reference
-    cityIdRef = member.name;
+    countryIdRef = member.name;
   }
-  constraintViolation = InternationalOrganizations.checkMember( cityIdRef );
-  if (cityIdRef &&
+  constraintViolation = InternationalOrganizations.checkMember( countryIdRef );
+  if (countryIdRef &&
       constraintViolation instanceof NoConstraintViolation) {
     // add the new author reference
-    cityIdRefStr = cityIdRef;
-    this.members[cityIdRefStr] =
-        City.instances[cityIdRefStr];
+    countryIdRefStr = countryIdRef;
+    this.members[countryIdRefStr] =
+        Country.instances[countryIdRefStr];
   } else {
     throw constraintViolation;
   }
@@ -223,18 +223,18 @@ InternationalOrganizations.prototype.addMember = function (member) {
 /***************Remove Member**************************************/
 InternationalOrganizations.prototype.removeMember = function (member) {
   var constraintViolation = null;
-  var cityIdRef = "";
+  var countryIdRef = "";
   // an author can be given as ID reference or object reference
   if (typeof(member) !== "object") {
-    cityIdRef = member;
+    countryIdRef = member;
   }
   else {
-    cityIdRef = member.name;
+    countryIdRef = member.name;
   }
-  constraintViolation = InternationalOrganizations.checkMember( cityIdRef );
+  constraintViolation = InternationalOrganizations.checkMember( countryIdRef );
   if (constraintViolation instanceof NoConstraintViolation) {
     // delete the author reference
-    delete this.members[cityIdRef];
+    delete this.members[countryIdRef];
   } else {
     throw constraintViolation;
   }
@@ -300,7 +300,7 @@ InternationalOrganizations.saveAll = function () {
   try {
     organizationString = JSON.stringify( InternationalOrganizations.instances );
     localStorage.setItem( "internationalOrganizations", organizationString );
-    console.log(" internationalOrganizations gibt es als item: "+ localStorage.getItem("internationalOrganizations"));
+  
     
   } catch (e) {
     alert( "Error" );
