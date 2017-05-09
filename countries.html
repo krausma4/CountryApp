@@ -1,0 +1,138 @@
+<!--
+ Created by Ole on 08.05.2017
+ -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta charset="UTF-8" />
+
+    <title>Country - Plain JS Validation App</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="lib/browserShims.js"></script>
+    <script src="lib/util.js"></script>
+    <script src="lib/errorTypes.js"></script>
+    <script src="lib/Enumeration.js"></script>
+    <script src="src/c/general.js"></script>
+    <script src="src/c/cities.js"></script>
+    <script src="src/c/countries.js"></script>
+    <script src="src/m/City.js"></script>
+    <script src="src/m/Country.js"></script>
+    <script src="src/v/countries.js"></script>
+    <script>
+        window.addEventListener("load", pl.c.countries.menu.initialize);
+    </script>
+</head>
+<body>
+<!-- ====================================================================== -->
+    <section id="countryMenu">
+        <h1>Countries</h1>
+        <menu>
+            <ul>
+                <li>
+                    <a onclick="pl.v.countries.list.setupUserInterface()">
+                    All Countries</a>
+                </li>
+                <li>
+                    <a onclick="pl.v.countries.create.setupUserInterface()">
+                    Create Country</a>
+                </li>
+                <li>
+                    <a onclick="pl.v.countries.update.setupUserInterface()">
+                    Update Country</a>
+                </li>
+                <li>
+                    <a onclick="pl.v.countries.delete.setupUserInterface()">
+                    Delete Country</a>
+                </li>
+                <li>
+                    <a href="index.html">
+                    Back to Main Menu</a>
+                </li>
+            </ul>
+        </menu>
+    </section>
+<!-- ====================================================================== -->
+    <section id="countryRead">
+        <h1>All Countries</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Capital</th>
+                    <th>Cities</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div>
+            <a onclick="pl.v.countries.menu.refreshUI()">
+                Back to Country Menu</a>
+        </div>
+    </section>
+<!-- ====================================================================== -->
+    <section id="countryCreate">
+        <h1>Create Country</h1>
+        <form>
+            <div>
+                <label>Name: <input type="text" name="name" /></label>
+            </div>
+            <div>
+                <label>Capital: <select name="selectCapital"></select></label>
+            </div>
+            <div>
+                <label>Cities:
+                    <select name="selectCities" multiple="multiple"></select>
+                </label>
+            </div>
+            <div>
+                <button type="submit" name="commit">Save</button>
+                <button type="button" onclick="pl.v.countries.menu.refreshUI()">
+                    Back to Country Menu</button>
+            </div>
+        </form>
+    </section>
+<!-- ====================================================================== -->
+    <section id="countryUpdate">
+        <h1>Update Country</h1>
+        <form>
+            <div>
+                <label>Name: <input type="text" name="name" /></label>
+            </div>
+            <div>
+                <label>Capital: <select name="selectCapital"></select></label>
+            </div>
+            <div>
+                <label>Cities:
+                    <select name="selectCities" multiple="multiple"></select>
+                </label>
+            </div>
+            <div>
+                <button type="submit" name="commit">Save</button>
+                <button type="button" onclick="pl.v.countries.menu.refreshUI()">
+                    Back to Country Menu</button>
+            </div>
+        </form>
+    </section>
+<!-- ====================================================================== -->
+    <section id="countryDelete">
+        <h1>Delete Country</h1>
+        <form>
+            <div>
+                <label>Select country:
+                    <select name="selectCountry"></select>
+                </label>
+            </div>
+            <div>
+                <button type="submit" name="commit">Delete</button>
+                <button type="button" onclick="pl.v.countries.menu.refreshUI()">
+                    Back to Country Menu</button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
