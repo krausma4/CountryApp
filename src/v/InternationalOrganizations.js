@@ -158,11 +158,14 @@ pl.v.internationalOrganizations.destroy = {
     util.fillSelectWithOptions(selectEl, InternationalOrganizations.instances, "acronym", {displayProp:"acronym"});
     
     // Set an event handler for the submit/delete button
-    
-    deleteButton.addEventListener("click",
-        
-        pl.v.internationalOrganizations.destroy.handleDeleteButtonClickEvent);
-    
+  
+    deleteButton.addEventListener("click", function () {
+      var formEl = document.querySelector("section#Organization-D > form");
+      InternationalOrganizations.destroy( formEl.selectOrganization.value);
+      // remove deleted book from select options
+      formEl.selectOrganization.remove( formEl.selectOrganization.selectedIndex);
+      formEl.reset();
+    });
     document.getElementById("Organization-M").style.display = "none";
     
     document.getElementById("Organization-D").style.display = "block";
@@ -174,7 +177,8 @@ pl.v.internationalOrganizations.destroy = {
   // Event handler for deleting a country
   
   handleDeleteButtonClickEvent: function () {
-    console.log("HHHHHHHHHHHHHH");
+  
+    
     var formEl = document.querySelector("#deleteOrganizationForm");
   
     var selectEl = formEl.selectOrganization;

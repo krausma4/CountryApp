@@ -18,6 +18,7 @@ function Country(slots){
     
     this.setName (slots.name);
     this.setCapital(slots.capital);
+    this.setCities(slots.cities);
     
   }
   
@@ -111,7 +112,7 @@ Country.prototype.setName = function (t) {
 Country.checkCapital = function (capital) {
   
   var constraintviolation;
-  
+  console.log("Capital: "+ capital);
   if(!capital){
     constraintviolation = new MandatoryValueConstraintViolation("a country must have a capital");
   }else {
@@ -409,9 +410,34 @@ Country.update = function(slots){
       
       updatedProperties.push("name");
       
-      
-      
     }
+  
+    if(country.capital && country.capital !== slots.capital){
+    
+      country.setCapital(slots.capital);
+    
+      updatedProperties.push("capital");
+    
+    }
+  
+  
+  
+    if ("citiesIdRefToAdd" in slots) {
+      updatedProperties.push("cities(added)");
+      var i;
+      for (i=0; i < slots.citiesIdRefToAdd.length; i++) {
+        country.addCity( slots.citiesIdRefToAdd[i]);
+      }
+    }
+    if ("citiesIdRefToRemove" in slots) {
+      updatedProperties.push("cities(removed)");
+      var i;
+      for (i=0; i < slots.citiesIdRefToRemove.length; i++) {
+        country.removeCity( slots.citiesIdRefToRemove[i]);
+      }
+    
+    }
+    
     
     console.log("Country " + slots.name + " modified!");
     
