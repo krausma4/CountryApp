@@ -100,6 +100,7 @@ InternationalOrganizations.checkAcronymAsId = function (acronym) {
   var constraintViolation = InternationalOrganizations.checkAcronym( acronym );
   
   if (constraintViolation instanceof NoConstraintViolation) {
+    console.log("acronym ist: "+ acronym);
     
     if (!acronym  ) {
       

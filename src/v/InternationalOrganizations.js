@@ -120,6 +120,7 @@ pl.v.internationalOrganizations.create = {
  
     // check all input fields and show error messages
     formEl.name.setCustomValidity( InternationalOrganizations.checkName( slots.name).message);
+    formEl.acronym.setCustomValidity( InternationalOrganizations.checkAcronymAsId( slots.acronym).message);
     /*MISSING CODE: do the same with Book.checkTitle and Book.checkYear */
     // save the input data only if all of the form fields are valid
     if (formEl.checkValidity()) {
@@ -161,6 +162,7 @@ pl.v.internationalOrganizations.destroy = {
   
     deleteButton.addEventListener("click", function () {
       var formEl = document.querySelector("section#Organization-D > form");
+      console.log("lösche nun: "+ formEl.selectOrganization.value);
       InternationalOrganizations.destroy( formEl.selectOrganization.value);
       // remove deleted book from select options
       formEl.selectOrganization.remove( formEl.selectOrganization.selectedIndex);

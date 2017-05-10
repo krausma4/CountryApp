@@ -68,16 +68,22 @@ pl.v.countries.create = {
         // add event listeners for responsive validation
         formEl.name.addEventListener("input", function () {
             formEl.name.setCustomValidity(
-                Country.checkName(formEl.name.value).message);
-
-        // set up the cities selection list (or association list widget)
+                Country.checkNameAsId(formEl.name.value).message);
+        });
+            
+            formEl.selectCapital.addEventListener("input", function () {
+              formEl.selectCapital.setCustomValidity(
+                  Country.checkCapital( formEl.selectCapital.value ).message );
+            });
+        
+                // set up the cities selection list (or association list widget)
         util.fillSelectWithOptions(citiesSelectEl, City.instances, "name",
             {displayProp:"name"});
 
         // set up the capital selection list
         util.fillSelectWithOptions(capitalSelectEl, City.instances, "name",
             {displayProp:"name"});
-        });
+      
 
         saveButton.addEventListener("click",
             pl.v.countries.create.handleSaveButtonClickEvent);
@@ -103,7 +109,8 @@ pl.v.countries.create = {
                     cities: []};
 
         // set error messages in case of constraint violations
-        formEl.name.setCustomValidity(Country.checkName(slots.name).message);
+        formEl.name.setCustomValidity(Country.checkNameAsId(slots.name).message);
+          formEl.selectCapital.setCustomValidity(Country.checkCapital(slots.capital).message);
 
         // save the input data only if all of the form fields are valid
         if (formEl.checkValidity()){
@@ -161,10 +168,15 @@ pl.v.countries.update = {
         // add event listeners for responsive validation
         formEl.name.addEventListener("input", function () {
             formEl.name.setCustomValidity(
-                Country.checkName( formEl.name.value).message);
+                Country.checkNameAsId( formEl.name.value).message);
         });
-
-        // Set an event handler for the submit/save button
+      formEl.selectCapital.addEventListener("input", function () {
+        formEl.selectCapital.setCustomValidity(
+            Country.checkCapital( formEl.selectCapital.value ).message );
+      });
+  
+  
+      // Set an event handler for the submit/save button
         saveButton.addEventListener("click",
             pl.v.countries.update.handleSaveButtonClickEvent);
         // neutralize the submit event
