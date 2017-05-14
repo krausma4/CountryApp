@@ -1,9 +1,6 @@
 
 /**
  *  Created by Ole on 08.05.2017.
- *
- *  Zur Überprüfung:
- *  - pl.v.countries.create: Validity für Capital und Cities?
  **/
 
 "use strict";
@@ -75,15 +72,14 @@ pl.v.countries.create = {
               formEl.selectCapital.setCustomValidity(
                   Country.checkCapital( formEl.selectCapital.value ).message );
             });
-        
-                // set up the cities selection list (or association list widget)
+
+        // set up the cities selection list (or association list widget)
         util.fillSelectWithOptions(citiesSelectEl, City.instances, "name",
             {displayProp:"name"});
 
         // set up the capital selection list
         util.fillSelectWithOptions(capitalSelectEl, City.instances, "name",
             {displayProp:"name"});
-      
 
         saveButton.addEventListener("click",
             pl.v.countries.create.handleSaveButtonClickEvent);
@@ -214,9 +210,8 @@ pl.v.countries.update = {
             formEl.selectCapital.selectedIndex = 0;
         }
     },
-    /**
-     * check data and invoke update
-     */
+
+    // check data and invoke update
     handleSaveButtonClickEvent: function () {
         var formEl = document.querySelector("section#countryUpdate > form"),
             citiesSelWidget = formEl.querySelector(".MultiSelectionWidget"),
