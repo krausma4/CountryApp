@@ -19,6 +19,7 @@
 
     <!-- MVC files -->
     <script src="src/c/app.js"></script>
+    <script src="src/m/InternationalOrganization.js"></script>
     <script src="src/m/Country.js"></script>
     <script src="src/m/City.js"></script>
 </head>
@@ -39,10 +40,11 @@
                 <a href="InternationalOrganizations.html">Organizations</a>
             </li>
             <li>
-                <a href="">Create Test Data</a>
+                <a href="#" onclick="pl.c.app.createTestData()">
+                    Create Test Data</a>
             </li>
             <li>
-                <a href="">Clear Database</a>
+                <a href="#" onclick="pl.c.app.clearData()">Clear Database</a>
             </li>
         </ul>
     </div>

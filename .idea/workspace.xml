@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e25cc648-7f82-42e2-9cdd-d7328ba2197f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cities.html" afterPath="$PROJECT_DIR$/cities.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/c/app.js" afterPath="$PROJECT_DIR$/src/c/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/m/Country.js" afterPath="$PROJECT_DIR$/src/m/Country.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +21,18 @@
       <file leaf-file-name="Country.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/m/Country.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="302" column="28" lean-forward="true" selection-start-line="302" selection-start-column="28" selection-end-line="302" selection-end-column="28" />
+            <state relative-caret-position="3383">
+              <caret line="199" column="2" lean-forward="false" selection-start-line="199" selection-start-column="2" selection-end-line="199" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="countries.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/countries.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="571">
+              <caret line="41" column="20" lean-forward="true" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -31,7 +41,7 @@
       <file leaf-file-name="InternationalOrganization.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/m/InternationalOrganization.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3726">
+            <state relative-caret-position="374">
               <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
@@ -41,7 +51,7 @@
       <file leaf-file-name="City.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/m/City.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1788">
+            <state relative-caret-position="-972">
               <caret line="33" column="21" lean-forward="true" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
               <folding />
             </state>
@@ -58,33 +68,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="175">
+              <caret line="21" column="62" lean-forward="true" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
               <folding>
-                <marker date="1494752838791" expanded="true" signature="1297:1304" ph="..." />
+                <marker date="1494754677657" expanded="true" signature="1450:1457" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/c/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="677">
-              <caret line="56" column="45" lean-forward="true" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cities.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cities.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="490">
+              <caret line="47" column="24" lean-forward="false" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -120,13 +120,13 @@
         <option value="$PROJECT_DIR$/src/v/InternationalOrganizations.js" />
         <option value="$PROJECT_DIR$/src/c/cities.js" />
         <option value="$PROJECT_DIR$/src/c/InternationalOrganizations.js" />
-        <option value="$PROJECT_DIR$/src/m/Country.js" />
         <option value="$PROJECT_DIR$/InternationalOrganizations.html" />
         <option value="$PROJECT_DIR$/src/m/InternationalOrganizations.js" />
         <option value="$PROJECT_DIR$/src/v/countries.js" />
         <option value="$PROJECT_DIR$/cities.html" />
-        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/src/m/Country.js" />
         <option value="$PROJECT_DIR$/src/c/app.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -358,7 +358,7 @@
       <option name="presentableId" value="Default" />
       <updated>1494361573266</updated>
       <workItem from="1494361576814" duration="12122000" />
-      <workItem from="1494744768941" duration="4424000" />
+      <workItem from="1494744768941" duration="4933000" />
     </task>
     <task id="LOCAL-00001" summary="Überarbeitung Teil 1">
       <created>1494749603165</created>
@@ -395,11 +395,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494751746146</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Überarbeitung Teil 3 (Testdaten vereinheitlicht)">
+      <created>1494754249459</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1494754249459</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20037000" />
+    <option name="totallyTimeSpent" value="20546000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="654" y="25" width="1255" height="1001" extended-state="0" />
@@ -433,7 +440,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Überarbeitung Teil 1" />
     <MESSAGE value="Überarbeitung Teil 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Überarbeitung Teil 2" />
+    <MESSAGE value="Überarbeitung Teil 3 (Testdaten vereinheitlicht)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Überarbeitung Teil 3 (Testdaten vereinheitlicht)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -609,7 +617,7 @@
         <state relative-caret-position="289">
           <caret line="17" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="7" />
           <folding>
-            <marker date="1494752838791" expanded="true" signature="1297:1304" ph="..." />
+            <marker date="1494754677657" expanded="true" signature="1450:1457" ph="..." />
           </folding>
         </state>
       </provider>
@@ -662,22 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/countries.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="79" lean-forward="true" selection-start-line="32" selection-start-column="79" selection-end-line="32" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InternationalOrganizations.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/v/countries.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -694,24 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/m/City.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1788">
-          <caret line="33" column="21" lean-forward="true" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <marker date="1494752838791" expanded="true" signature="1297:1304" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/c/countries.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -720,10 +694,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/m/Country.js">
+    <entry file="file://$PROJECT_DIR$/InternationalOrganizations.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="302" column="28" lean-forward="true" selection-start-line="302" selection-start-column="28" selection-end-line="302" selection-end-column="28" />
+        <state relative-caret-position="0">
+          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -736,9 +710,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/countries.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="41" column="20" lean-forward="true" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/m/City.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-972">
+          <caret line="33" column="21" lean-forward="true" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/m/Country.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3383">
+          <caret line="199" column="2" lean-forward="false" selection-start-line="199" selection-start-column="2" selection-end-line="199" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/m/InternationalOrganization.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3726">
+        <state relative-caret-position="374">
           <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
@@ -746,9 +744,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/c/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="56" column="45" lean-forward="true" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
+        <state relative-caret-position="490">
+          <caret line="47" column="24" lean-forward="false" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="21" column="62" lean-forward="true" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+          <folding>
+            <marker date="1494754677657" expanded="true" signature="1450:1457" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -77,7 +77,7 @@ Country.checkCapital = function(capital) {
   console.log("Capital: "+ capital);
   if(!capital){
     constraintViolation = new MandatoryValueConstraintViolation(
-        "a country must have a capital");
+        "A country must have a capital");
   }else {
     constraintViolation = City.checkNameAsIdRef(capital);
   }
@@ -170,7 +170,7 @@ Country.convertRow2Obj = function (countryRow){
 Country.destroy = function (name) {
   if (Country.instances[name]) {
     delete Country.instances[name];
-    console.log("Country " + name + " deleted");
+    console.log("Country " + name + " deleted.");
   } else {
     console.log("There is no country with the name " +
         name + " in the database!");
@@ -196,14 +196,6 @@ Country.retrieveAll = function(){
       key = keys[i];
       Country.instances[key] = Country.convertRow2Obj(countries[key]);
     }
-  }
-};
-//delete all Countrys from localstorage
-
-Country.clearData= function (){
-  if (window.confirm("Do you really want to delete all country data?")) {
-    Country.instances = {};
-    localStorage.setItem("countries", "{}");
   }
 };
 
@@ -283,30 +275,4 @@ Country.update = function(slots){
           "No property value changed for country " + slots.name + " !");
     }
   }
-};
-Country.generateTestData = function () {
-
-try{
-  Country.instances["Deutschland"] = new Country({
-    name: "Deutschland",
-    capital: "Berlin",
-    cities: {name: "Berlin"}
-  });
- Country.instances["Polen"] = new Country({
-    name: "Polen",
-   capital: "Warschau",
-   cities: {name: "Berlin"}
-  });
-  Country.instances["Russland"] = new Country({
-    name: "Russland",
-    capital: "Moskau",
-    cities: {name: "Berlin"}
-  });
-  
- Country.saveAll();
- 
-}catch (e){
-  console.log("ERROR");
-  console.log(e.constructor.name + ": "+e.message);
-}
 };

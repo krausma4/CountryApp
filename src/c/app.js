@@ -15,14 +15,15 @@ pl.c.app = {
     createTestData: function() {
         try {
             City.instances["Berlin"] = new City({name:"Berlin"});
-            City.instances["Hamburg"] = new City({name:"Berlin"});
-            City.instances["Frankfurt"] = new City({name:"Berlin"});
-            City.instances["Paris"] = new City({name:"Berlin"});
-            City.instances["Moskau"] = new City({name:"Berlin"});
-            City.instances["Novosibirsk"] = new City({name:"Berlin"});
-            City.instances["London"] = new City({name:"Berlin"});
-            City.instances["Madrid"] = new City({name:"Berlin"});
+            City.instances["Hamburg"] = new City({name:"Hamburg"});
+            City.instances["Frankfurt"] = new City({name:"Frankfurt"});
+            City.instances["Paris"] = new City({name:"Paris"});
+            City.instances["Moskau"] = new City({name:"Moskau"});
+            City.instances["Novosibirsk"] = new City({name:"Novosibirsk"});
+            City.instances["London"] = new City({name:"London"});
+            City.instances["Madrid"] = new City({name:"Madrid"});
             City.saveAll();
+
             Country.instances["Deutschland"] = new Country({
                 name: "Deutschland",
                 capital: "Berlin",
@@ -36,6 +37,7 @@ pl.c.app = {
                 capital: "Paris",
                 cities: {name: "Paris"}});
             Country.saveAll();
+
             InternationalOrganizations.instances["ABC"] =
                 new InternationalOrganizations({
                     acronym:"ABC",
@@ -43,7 +45,7 @@ pl.c.app = {
                     members: {name: "Deutschland"}});
             InternationalOrganizations.saveAll();
         } catch (e) {
-            console.log( e.constructor.name + ": " + e.message);
+            console.log(e.constructor.name + ": " + e.message);
         }
     },
     clearData: function() {
