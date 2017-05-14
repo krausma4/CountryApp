@@ -150,13 +150,13 @@ City.saveAll = function() {
 City.createTestData = function() {
     if (confirm("Test data will override existing data. Continue?")) {
         City.instances["Berlin"] = new City({
-            name: "Germany"
+            name: "Berlin"
         });
         City.instances["Hamburg"] = new City({
-            name: "Russia"
+            name: "Hamburg"
         });
         City.instances["Frankfurt"] = new City({
-            name: "France"
+            name: "Frankfurt"
         });
         City.instances["Lyon"] = new City({
             name: "Lyon"

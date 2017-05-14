@@ -16,42 +16,27 @@ function InternationalOrganizations(slots) {
     if (slots.members ||slots.membersIdRef) {
       this.setMember( slots.members || slots.membersIdRef );
     }
-    
-    
   }
-  
-  
 }
 
-
 InternationalOrganizations.instances = {};
-
-
 /***************Check Name****************************/
 InternationalOrganizations.checkName = function (name) {
   var constraintViolation;
   if (!name) {
     constraintViolation = new MandatoryValueConstraintViolation
-    
     ( "a name is required" );
-    
   }
-  
   else if (typeof(name) !== "string" || name.trim() === "") {
     
     constraintViolation = new RangeConstraintViolation(
         "The name must be a non-empty string!" );
     
   }
-  
   else {
-    
     constraintViolation = new NoConstraintViolation("alles gut");
-    
   }
-  
   return constraintViolation;
-  
 };
 
 
@@ -65,86 +50,55 @@ InternationalOrganizations.prototype.setName = function (name) {
   else {
     throw validationResult;
   }
-  
-  
 };
-
 
 /***************Check Acronym**************************************/
 InternationalOrganizations.checkAcronym = function (acronym) {
   var constraintViolation;
   if (!acronym) {
-    
     constraintViolation = new NoConstraintViolation();
-    
   }
   
   else if (typeof(acronym) !== "string" || acronym.trim() === "") {
-    
     constraintViolation = new RangeConstraintViolation(
         "The name must be a non-empty string!" );
-    
   }
   
   else {
-    
     constraintViolation = new NoConstraintViolation();
-    
   }
-  
   return constraintViolation;
-  
 };
 /***************Check Acronym as ID********************************/
 InternationalOrganizations.checkAcronymAsId = function (acronym) {
   var constraintViolation = InternationalOrganizations.checkAcronym( acronym );
-  
   if (constraintViolation instanceof NoConstraintViolation) {
     console.log("acronym ist: "+ acronym);
-    
     if (!acronym  ) {
-      
       constraintViolation = new MandatoryValueConstraintViolation
-      
       ( "a name is required" );
-      
     }
-    
     else if (InternationalOrganizations.instances[acronym]) {
-      
       constraintViolation = new UniquenessConstraintViolation(
           "There is already an organization record with this acronym!" );
-      
     }
     
     else {
-      
       constraintViolation = new NoConstraintViolation("gut");
-      
     }
-    
   }
-  
   return constraintViolation;
-  
-  
 };
 /***************Check Acronym as ID Ref****************************/
 InternationalOrganizations.checkAcronymAsIdRef = function (acronym) {
   
   var constraintViolation = InternationalOrganizations.checkName( acronym );
-  
   if ((constraintViolation instanceof NoConstraintViolation)
       && acronym !== undefined) {
-    
     if (!InternationalOrganizations.instances[acronym]) {
-      
       constraintViolation = new ReferentialIntegrityConstraintViolation
-      
       ( "There is no city record with this name!" );
-      
     }
-    
   }
   
   return constraintViolation;
@@ -192,8 +146,6 @@ InternationalOrganizations.prototype.setMember = function (members) {
       this.addMember( members[keys[i]] );
     }
   }
-  
-  
 };
 
 
@@ -217,8 +169,6 @@ InternationalOrganizations.prototype.addMember = function (member) {
   } else {
     throw constraintViolation;
   }
-  
-  
 };
 
 /***************Remove Member**************************************/
@@ -241,11 +191,9 @@ InternationalOrganizations.prototype.removeMember = function (member) {
   }
 };
 
-
 InternationalOrganizations.convertRow2Obj = function (OrganizationRow) {
   return new InternationalOrganizations( OrganizationRow );
 };
-
 
 InternationalOrganizations.destroy = function (acronym) {
   console.log(" lösche jetzt organisation mit acronym: "+ acronym);
@@ -258,7 +206,6 @@ InternationalOrganizations.destroy = function (acronym) {
         acronym + " in the database!" );
   }
 };
-
 
 InternationalOrganizations.retrieveAll = function () {
   
@@ -274,9 +221,7 @@ InternationalOrganizations.retrieveAll = function () {
   catch (e) {
     alert( "Error when reading from Local Storage\n" + e );
   }
-  
   if (organizationString) {
-    
     organizations = JSON.parse( organizationString );
     keys = Object.keys( organizations );
     console.log( keys.length + " organizations are loaded" );
@@ -286,11 +231,7 @@ InternationalOrganizations.retrieveAll = function () {
       InternationalOrganizations.instances[key] =
           InternationalOrganizations.convertRow2Obj( organizations[key] );
     }
-    
-    
   }
-  
-  
 };
 
 
@@ -301,19 +242,14 @@ InternationalOrganizations.saveAll = function () {
   try {
     organizationString = JSON.stringify( InternationalOrganizations.instances );
     localStorage.setItem( "internationalOrganizations", organizationString );
-  
-    
   } catch (e) {
     alert( "Error" );
     error = true;
-    
   }
   
   if (!error) {
     console.log( countOfOrganizations + " organizations saved" );
   }
-  
-  
 };
 
 
@@ -325,20 +261,15 @@ InternationalOrganizations.add = function (slots) {
     console.log( e.constructor.name + ": " + e.message );
     organization = null;
   }
-  
   var validationResult = InternationalOrganizations.checkName( slots.name );
   if (validationResult instanceof NoConstraintViolation) {
     // add book to the Book.instances collection
     InternationalOrganizations.instances[slots.acronym] = organization;
     console.log( "Organization " + slots.name + " created!" );
   }
-  
-  
 };
 
 InternationalOrganizations.update = function (slots){
-  
-  
   var organization = InternationalOrganizations.instances[slots.acronym],
       noConstraintViolated =true,
       updatedProperties= [],
@@ -348,7 +279,6 @@ InternationalOrganizations.update = function (slots){
     if(organization.name && organization.name !== slots.name){
       organization.setName(slots.name);
       updatedProperties.push("name");
-      
     }
     if(organization.acronym !== slots.acronym){
     
@@ -392,9 +322,4 @@ InternationalOrganizations.update = function (slots){
       console.log("No property value changed for organization " + slots.acronym + " !");
     }
   }
-  
-  
-  
 };
-
-
