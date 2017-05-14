@@ -15,7 +15,8 @@
     <script src="src/v/InternationalOrganizations.js"></script>
     <script src="src/c/InternationalOrganizations.js"></script>
     <script>
-      window.addEventListener("load", pl.c.internationalOrganizations.manage.initialize);
+      window.addEventListener("load",
+          pl.c.internationalOrganizations.manage.initialize);
     </script>
     <title>International Organizations</title>
 </head>
@@ -25,10 +26,18 @@
     <!-- ======================================================= -->
     <h1>Public Library: Manage organizations</h1>
     <menu>
-        <li><button type="button" onclick="pl.v.internationalOrganizations.list.setupUserInterface()">List all Organizations</button></li>
-        <li><button type="button" onclick="pl.v.internationalOrganizations.create.setupUserInterface()">Add a new Organizations</button></li>
-        <li><button type="button" onclick="pl.v.internationalOrganizations.update.setupUserInterface()">Update a Organization record</button></li>
-        <li><button type="button" onclick="pl.v.internationalOrganizations.destroy.setupUserInterface()">Delete a Organization record</button></li>
+        <li><button type="button" onclick="
+        pl.v.internationalOrganizations.list.setupUserInterface()">
+            List all Organizations</button></li>
+        <li><button type="button" onclick="
+        pl.v.internationalOrganizations.create.setupUserInterface()">
+            Add a new Organizations</button></li>
+        <li><button type="button" onclick="
+        pl.v.internationalOrganizations.update.setupUserInterface()">
+            Update a Organization record</button></li>
+        <li><button type="button" onclick="
+        pl.v.internationalOrganizations.destroy.setupUserInterface()">
+            Delete a Organization record</button></li>
     </menu>
     <div class="button"><a href="index.html">Back to Main menu</a></div>
 </section>
@@ -41,7 +50,9 @@
         <tbody></tbody>
     </table>
     <div class="button">
-        <button type="button" onclick="pl.v.internationalOrganizations.manage.refreshUI()">Back to menu</button>
+        <button type="button" onclick="
+            pl.v.internationalOrganizations.manage.refreshUI()">
+            Back to menu</button>
     </div>
 </section>
 <!-- ======================================================= -->
@@ -63,7 +74,9 @@
         </div>
         <div class="button-group">
             <button type="submit" name="commit">Save</button>
-            <button type="button" onclick="pl.v.internationalOrganizations.manage.refreshUI()">Back to menu</button>
+            <button type="button" onclick="
+                pl.v.internationalOrganizations.manage.refreshUI()">
+                Back to menu</button>
         </div>
     </form>
 </section>
@@ -73,7 +86,8 @@
     <h1>Public Library: Update an Organization record</h1>
     <form>
         <div class="select-one">
-            <label>Select Organization: <select name="selectOrganization"></select></label>
+            <label>Select Organization:
+                <select name="selectOrganization"></select></label>
         </div>
         <div class="field">
             <label>Name: <input name="name"/></label>
@@ -84,11 +98,14 @@
 
         <div class="widget">
             <label for="updOrganizationSelectMembers">Members: </label>
-            <div class="MultiSelectionWidget" id="updOrganizationSelectMembers"></div>
+            <div class="MultiSelectionWidget"
+                 id="updOrganizationSelectMembers"></div>
         </div>
         <div class="button-group">
             <button type="submit" name="commit">Save</button>
-            <button type="button" onclick="pl.v.internationalOrganizations.manage.refreshUI()">Back to menu</button>
+            <button type="button" onclick="
+                pl.v.internationalOrganizations.manage.refreshUI()">
+                Back to menu</button>
         </div>
     </form>
 </section>
@@ -98,11 +115,14 @@
     <h1>Public Library: Delete an Organization record</h1>
     <form id="deleteOrganizationForm" class="pure-form pure-form-aligned">
         <div class="select-one">
-            <label>Select Organization: <select name="selectOrganization"></select></label>
+            <label>Select Organization:
+                <select name="selectOrganization"></select></label>
         </div>
         <div class="button-group">
             <button type="submit" name="delete">Delete</button>
-            <button type="button" onclick="pl.v.internationalOrganizations.manage.refreshUI()">Back to menu</button>
+            <button type="button" onclick="
+                pl.v.internationalOrganizations.manage.refreshUI()">
+                Back to menu</button>
         </div>
     </form>
 </section>

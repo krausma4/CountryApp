@@ -21,15 +21,14 @@ function Country(slots){
 
 Country.instances = {};
 
-Country.checkName = function (t) {
+Country.checkName = function(name) {
   var constraintViolation;
-  if(!t){
-    constraintViolation = new NoConstraintViolation("alles gut");
-  } else if(!util.isNonEmptyString(t)){
-    
-    constraintViolation = new RangeConstraintViolation("name must be a non-empty string");
-  } else{
-    constraintViolation = new NoConstraintViolation("alles gut");
+  if(!util.isNonEmptyString(name)){
+    constraintViolation = new RangeConstraintViolation(
+        "The name must be a non-empty string!");
+  } else {
+    constraintViolation = new NoConstraintViolation(
+        "Success");
   }
   return constraintViolation;
 };
@@ -38,51 +37,54 @@ Country.checkNameAsId = function(name){
   var constraintViolation = Country.checkName(name);
   if((constraintViolation instanceof  NoConstraintViolation)){
     if(!name){
-      constraintViolation = new MandatoryValueConstraintViolation("a name must be provided");
+      constraintViolation = new MandatoryValueConstraintViolation(
+          "Please provide a name!");
       
     } else if(Country.instances[name]){
-      constraintViolation = new UniquenessConstraintViolation("there is already a country record with this name");
+      constraintViolation = new UniquenessConstraintViolation(
+          "There is already a country record with this name!");
     } else{
-      constraintViolation = new NoConstraintViolation("alles gut");
+      constraintViolation = new NoConstraintViolation(
+          "Success");
     }
   }
-  
   return constraintViolation;
 };
 
-Country.checkNameAsIdRef = function (name) {
-  var constrainViolation = Country.checkName(name);
-  if((constrainViolation instanceof NoConstraintViolation) &&
+Country.checkNameAsIdRef = function(name) {
+  var constraintViolation = Country.checkName(name);
+  if((constraintViolation instanceof NoConstraintViolation) &&
       name !== undefined){
     
     if(!Country.instances[name]){
-      constrainViolation = new ReferentialIntegrityConstraintViolation(" there is no Country with this name");
+      constraintViolation = new ReferentialIntegrityConstraintViolation(
+          "There is no Country with this name");
     }
   }
-  return constrainViolation;
+  return constraintViolation;
 };
 
-Country.prototype.setName = function (t) {
-  var validationResult = Country.checkNameAsId( t);
-  //noinspection JSLint
+Country.prototype.setName = function (name) {
+  var validationResult = Country.checkNameAsId(name);
   if (validationResult instanceof NoConstraintViolation) {
-    this.name = t;
+    this.name = name;
   } else {
     throw validationResult;
   }
 };
-Country.checkCapital = function (capital) {
-  var constraintviolation;
+Country.checkCapital = function(capital) {
+  var constraintViolation;
   console.log("Capital: "+ capital);
   if(!capital){
-    constraintviolation = new MandatoryValueConstraintViolation("a country must have a capital");
+    constraintViolation = new MandatoryValueConstraintViolation(
+        "a country must have a capital");
   }else {
-    constraintviolation = City.checkNameAsIdRef(capital);
+    constraintViolation = City.checkNameAsIdRef(capital);
   }
-  return constraintviolation;
+  return constraintViolation;
 };
 
-Country.prototype.setCapital = function (capital) {
+Country.prototype.setCapital = function(capital) {
   var validationResult = Country.checkCapital(capital);
   if(validationResult instanceof  NoConstraintViolation){
     this.capital = capital;
@@ -91,16 +93,15 @@ Country.prototype.setCapital = function (capital) {
   }
 };
 
-
-
-Country.checkCity = function (city) {
+Country.checkCity = function(city) {
     var constraintViolation = null;
     if (!city) {
-      constraintViolation = new NoConstraintViolation("alles gut");
+      constraintViolation = new NoConstraintViolation(
+          "Success");
     } else {
       // invoke foreign key constraint check
       constraintViolation =
-          City.checkNameAsIdRef( city );
+          City.checkNameAsIdRef(city);
     }
     return constraintViolation;
 };
@@ -115,7 +116,7 @@ Country.prototype.addCity =function (city) {
   } else {                       // an object reference
     cityIdRef = city.name;
   }
-  constraintViolation = Country.checkCity( cityIdRef );
+  constraintViolation = Country.checkCity(cityIdRef);
   if (cityIdRef &&
       constraintViolation instanceof NoConstraintViolation) {
     // add the new author reference
@@ -145,7 +146,6 @@ Country.prototype.removeCity = function (city) {
   } else {
     throw constraintViolation;
   }
-
 };
 
 Country.prototype.setCities = function (city) {
@@ -163,13 +163,9 @@ Country.prototype.setCities = function (city) {
   }
 };
 
-
-
 Country.convertRow2Obj = function (countryRow){
   return new Country(countryRow);
 };
-
-
 
 Country.destroy = function (name) {
   if (Country.instances[name]) {
@@ -180,8 +176,6 @@ Country.destroy = function (name) {
         name + " in the database!");
   }
 };
-
-
 
 Country.retrieveAll = function(){
   var key ="", keys= [], countryString="",countries ={}, i=0;
@@ -212,8 +206,6 @@ Country.clearData= function (){
     localStorage.setItem("countries", "{}");
   }
 };
-
-
 
 Country.saveAll = function(){
   var countryString = "", error=false;
@@ -287,7 +279,8 @@ Country.update = function(slots){
       console.log("Properties " + updatedProperties.toString() +
           " modified for country " + slots.name);
     } else {
-      console.log("No property value changed for country " + slots.name + " !");
+      console.log(
+          "No property value changed for country " + slots.name + " !");
     }
   }
 };
