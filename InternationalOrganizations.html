@@ -2,18 +2,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta charset="UTF-8" />
+
+    <!-- CSS files -->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/base-min.css" />
     <link rel="stylesheet" href="css/main.css"/>
+
+    <!-- lib files -->
     <script src="lib/browserShims.js"></script>
     <script src="lib/util.js"></script>
     <script src="lib/errorTypes.js"></script>
     <script src="lib/Enumeration.js"></script>
+
+    <!-- MVC files -->
     <script src="src/m/City.js"></script>
     <script src="src/m/Country.js"></script>
     <script src="src/m/InternationalOrganization.js"></script>
     <script src="src/c/app.js"></script>
     <script src="src/v/internationalOrganizations.js"></script>
     <script src="src/c/internationalOrganizations.js"></script>
+
+    <!-- Initialize -->
     <script>
       window.addEventListener("load",
           pl.c.internationalOrganizations.manage.initialize);
@@ -22,7 +30,7 @@
 </head>
 <body>
 <!-- ======================================================= -->
-<section id="Organization-M" class="UI-Page">
+<section id="organizationMenu">
     <!-- ======================================================= -->
     <h1>Public Library: Manage organizations</h1>
     <menu>
@@ -42,7 +50,7 @@
     <div class="button"><a href="index.html">Back to Main menu</a></div>
 </section>
 <!-- ======================================================= -->
-<section id="Organization-R" class="UI-Page">
+<section id="organizationRead">
     <!-- ======================================================= -->
     <h1>Public Library: List all Organizations</h1>
     <table>
@@ -56,7 +64,7 @@
     </div>
 </section>
 <!-- ======================================================= -->
-<section id="Organization-C" class="UI-Page">
+<section id="organizationCreate">
     <!-- ======================================================= -->
     <h1>Public Library: Create a new Organization record</h1>
     <form>
@@ -81,7 +89,7 @@
     </form>
 </section>
 <!-- ======================================================= -->
-<section id="Organization-U" class="UI-Page">
+<section id="organizationUpdate">
     <!-- ======================================================= -->
     <h1>Public Library: Update an Organization record</h1>
     <form>
@@ -110,7 +118,7 @@
     </form>
 </section>
 <!-- ======================================================= -->
-<section id="Organization-D" class="UI-Page">
+<section id="organizationDelete">
     <!-- ======================================================= -->
     <h1>Public Library: Delete an Organization record</h1>
     <form id="deleteOrganizationForm" class="pure-form pure-form-aligned">
