@@ -56,7 +56,7 @@ pl.v.cities.create = {
         // add event listeners for responsive validation
         formEl.name.addEventListener("input", function () {
             formEl.name.setCustomValidity(
-                City.checkName(formEl.name.value).message);
+                City.checkNameAsId(formEl.name.value).message);
             });
 
         saveButton.addEventListener("click",

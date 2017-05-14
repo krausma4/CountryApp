@@ -48,9 +48,7 @@ pl.v.internationalOrganizations.list = {
      
       // create list of authors
       listEl = util.createListFromMap(organization.members, "name");
-      row.insertCell(-1).appendChild( listEl);
-      row.insertCell(-1).textContent =
-          organization.members ? organization.members.name : "";
+      row.insertCell(-1).appendChild(listEl);
     }
     document.getElementById("Organization-M").style.display = "none";
     document.getElementById("Organization-R").style.display = "block";

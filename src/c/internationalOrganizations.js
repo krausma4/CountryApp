@@ -5,10 +5,9 @@
 
 pl.c.internationalOrganizations.manage = {
   initialize: function () {
-    InternationalOrganizations.retrieveAll();
     City.retrieveAll();
-    
     Country.retrieveAll();
+    InternationalOrganizations.retrieveAll();
     pl.v.internationalOrganizations.manage.setupUserInterface();
   }
 };

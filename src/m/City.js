@@ -43,7 +43,7 @@ City.checkNameAsId = function(id) {
                 "There is already a city record with this name!");
         }
         else {
-            constraintViolation = new NoConstraintViolation();
+            constraintViolation = new NoConstraintViolation("Success");
         }
     }
     return constraintViolation;

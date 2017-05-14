@@ -6,14 +6,11 @@ pl.c.countries.manage = {
   
   initialize: function () {
     
-    InternationalOrganizations.retrieveAll();
-    
     City.retrieveAll();
-    
     Country.retrieveAll();
+    InternationalOrganizations.retrieveAll();
     
     pl.v.countries.manage.setupUserInterface();
     
   }
-  
 };
