@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e25cc648-7f82-42e2-9cdd-d7328ba2197f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/m/InternationalOrganizations.js" afterPath="$PROJECT_DIR$/src/m/InternationalOrganizations.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InternationalOrganizations.html" afterPath="$PROJECT_DIR$/InternationalOrganizations.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/countries.html" afterPath="$PROJECT_DIR$/countries.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/c/InternationalOrganizations.js" afterPath="$PROJECT_DIR$/src/c/internationalOrganizations.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/m/InternationalOrganizations.js" afterPath="$PROJECT_DIR$/src/m/InternationalOrganization.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/v/InternationalOrganizations.js" afterPath="$PROJECT_DIR$/src/v/internationalOrganizations.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,7 +30,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="countries.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="countries.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/v/countries.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1149">
@@ -37,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InternationalOrganizations.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/m/InternationalOrganizations.js">
+      <file leaf-file-name="InternationalOrganization.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/m/InternationalOrganization.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2128">
-              <caret line="171" column="0" lean-forward="true" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+            <state relative-caret-position="5457">
+              <caret line="321" column="7" lean-forward="false" selection-start-line="321" selection-start-column="7" selection-end-line="321" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -315,7 +318,7 @@
       <option name="presentableId" value="Default" />
       <updated>1494361573266</updated>
       <workItem from="1494361576814" duration="12122000" />
-      <workItem from="1494744768941" duration="2556000" />
+      <workItem from="1494744768941" duration="2640000" />
     </task>
     <task id="LOCAL-00001" summary="Überarbeitung Teil 1">
       <created>1494749603165</created>
@@ -331,11 +334,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494750909821</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Überarbeitung Teil 2">
+      <created>1494751576339</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1494751576339</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18169000" />
+    <option name="totallyTimeSpent" value="18253000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="992" y="25" width="917" height="1001" extended-state="0" />
@@ -408,7 +418,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c/InternationalOrganizations.js">
+    <entry file="file://$PROJECT_DIR$/src/c/internationalOrganizations.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -516,7 +526,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c/InternationalOrganizations.js">
+    <entry file="file://$PROJECT_DIR$/src/c/internationalOrganizations.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -532,7 +542,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/m/InternationalOrganizations.js">
+    <entry file="file://$PROJECT_DIR$/src/m/InternationalOrganization.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3529">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -540,7 +550,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/v/InternationalOrganizations.js">
+    <entry file="file://$PROJECT_DIR$/src/v/internationalOrganizations.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="161" column="56" lean-forward="true" selection-start-line="161" selection-start-column="56" selection-end-line="161" selection-end-column="56" />
@@ -582,7 +592,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/v/InternationalOrganizations.js">
+    <entry file="file://$PROJECT_DIR$/src/v/internationalOrganizations.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
           <caret line="165" column="38" lean-forward="false" selection-start-line="165" selection-start-column="38" selection-end-line="165" selection-end-column="38" />
@@ -598,7 +608,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c/InternationalOrganizations.js">
+    <entry file="file://$PROJECT_DIR$/src/c/internationalOrganizations.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
@@ -654,10 +664,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/m/InternationalOrganization.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5457">
+          <caret line="321" column="7" lean-forward="false" selection-start-line="321" selection-start-column="7" selection-end-line="321" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/InternationalOrganizations.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
-          <caret line="122" column="43" lean-forward="true" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
+        <state relative-caret-position="153">
+          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -676,14 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1149">
           <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/m/InternationalOrganizations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2128">
-          <caret line="171" column="0" lean-forward="true" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -320,7 +320,6 @@ InternationalOrganizations.update = function (slots){
       for (i=0; i < slots.membersIdRefToRemove.length; i+=1) {
         organization.removeMember(slots.membersIdRefToRemove[i]);
       }
-      
     }
     console.log("Organization " + slots.acronym + " modified!");
   }catch(e){
