@@ -70,7 +70,7 @@ pl.v.countries.create = {
             
             formEl.selectCapital.addEventListener("input", function () {
               formEl.selectCapital.setCustomValidity(
-                  Country.checkCapital( formEl.selectCapital.value ).message );
+                  Country.checkCapital(formEl.selectCapital.value).message );
             });
 
         // set up the cities selection list (or association list widget)
@@ -105,8 +105,10 @@ pl.v.countries.create = {
                     cities: []};
 
         // set error messages in case of constraint violations
-        formEl.name.setCustomValidity(Country.checkNameAsId(slots.name).message);
-          formEl.selectCapital.setCustomValidity(Country.checkCapital(slots.capital).message);
+        formEl.name.setCustomValidity(
+            Country.checkNameAsId(slots.name).message);
+          formEl.selectCapital.setCustomValidity(
+              Country.checkCapital(slots.capital).message);
 
         // save the input data only if all of the form fields are valid
         if (formEl.checkValidity()){
@@ -158,7 +160,8 @@ pl.v.countries.update = {
             }
         });
 
-        selectCountryEl.addEventListener("change", this.handleCountrySelectChangeEvent);
+        selectCountryEl.addEventListener("change",
+            this.handleCountrySelectChangeEvent);
 
 
         // add event listeners for responsive validation

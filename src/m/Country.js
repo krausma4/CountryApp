@@ -74,7 +74,6 @@ Country.prototype.setName = function (name) {
 };
 Country.checkCapital = function(capital) {
   var constraintViolation;
-  console.log("Capital: "+ capital);
   if(!capital){
     constraintViolation = new MandatoryValueConstraintViolation(
         "A country must have a capital");

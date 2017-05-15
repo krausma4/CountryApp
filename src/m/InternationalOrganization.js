@@ -84,7 +84,6 @@ InternationalOrganizations.checkAcronym = function (acronym) {
 InternationalOrganizations.checkAcronymAsId = function (acronym) {
   var constraintViolation = InternationalOrganizations.checkAcronym(acronym);
   if (constraintViolation instanceof NoConstraintViolation) {
-    console.log("acronym ist: "+ acronym);
     if (!acronym ) {
       constraintViolation = new MandatoryValueConstraintViolation
       ("a name is required");

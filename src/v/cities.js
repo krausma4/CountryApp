@@ -85,7 +85,7 @@ pl.v.cities.create = {
         if (formEl.checkValidity()){
             City.add(slots);
         } else {
-            console.log("es gibt noch fehler");
+            console.log("Error when adding a city.");
         }
     }
 };
